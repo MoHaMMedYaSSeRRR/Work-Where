@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+$main-color: #0156fd;
+$main-font: "Raleway", sans-serif;
+$border-color :#03FC90 ;
+$text-color :#343A40;
+:host{
+    box-sizing: border-box;
+    font-family: $main-font;
+    padding: 0;
+    margin: 0;
+}
+.border-color{
+    color: $border-color;
+}
+
+
+.main-color{
+    color: $main-color;
+}

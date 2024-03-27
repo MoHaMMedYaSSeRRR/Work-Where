@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+:host {
+  font-family: "Inter", sans-serif;
+}
+
+.courses {
+  h2 {
+    font-size: 64px;
+    line-height: 85px;
+    font-weight: 700;
+  }
+  p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  button {
+    background-color: #03fc90;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+@media screen and (min-width: 0) and (max-width: 400px) {
+  .courses {
+    h2 {
+      font-size: 35px;
+      line-height: 45px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    button {
+      margin: auto;
+    }
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  h2 {
+    font-size: 40px !important;
+    line-height: 60px !important;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  button {
+    margin: auto;
+  }
+}
+
+
+.cards{
+.item {
+  overflow: hidden;
+  transition: border 0.5s;
+
+  .content {
+    h3 {
+      font-weight: 600;
+      font-size: 28px;
+    }
+    h5,
+    p,
+    h4 {
+      line-height: 28px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    
+  }
+  .item-footer {
+    transform: translateY(150%);
+    opacity: 0;
+    transition: transform 0.8s, opacity 1s;
+  }
+  &:hover {
+    &{
+        border: #0156fd 3px solid;
+        padding: 3px;
+    }
+    .item-footer {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}
+
+  button {
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #0156fd;
+  }
+}

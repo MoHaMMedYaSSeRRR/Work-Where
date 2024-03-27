@@ -1,0 +1,71 @@
+.course {
+  h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  h4 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+@media screen and (min-width: 0) and (max-width: 405px) {
+  .content {
+    .course-header {
+      flex-direction: column;
+    }
+  }
+}
+
+.item {
+  h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  button {
+    background-color: #0156fd;
+    border: none;
+  }
+}
+table {
+  th {
+    font-weight: 800;
+    font-size: 16px;
+    color: #152536;
+  }
+  td {
+    font-weight: 400;
+    font-size: 16px;
+    color: #152536;
+  }
+}
+
+.time {
+  .col-md-8 {
+    p {
+      margin: 50px 0;
+    }
+  }
+}
+@media screen and (min-width:0) and (max-width:600px) {
+    .time {
+        .col-md-8 {
+          p {
+            margin:0;
+          }
+        }
+      }
+}

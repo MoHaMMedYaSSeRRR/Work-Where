@@ -1,0 +1,105 @@
+<section class="mt-5">
+  <div class="add-course">
+    <div class="text-center">
+      <h2 class="main-color">Add A New Course</h2>
+      <p>Please Fill The Data To Add A New Course</p>
+    </div>
+    <div class="w-75 mx-auto mb-5 mt-3">
+      <form [formGroup]="addcourse" (ngSubmit)="onAddCourse(addcourse)">
+        <div class="form-item">
+          <label class="mb-2" for="course-name">Course Name</label>
+          <input
+          formControlName="Name"
+            type="text"
+            placeholder="please type the course name ..."
+            class="form-control  p-3"
+            id="course-name"
+          />
+        </div>
+
+        <div class="form-item">
+          <label class="mb-2 mt-4" for="course-desc">Course Description</label>
+          <textarea
+            class="form-control"
+            formControlName="Description"
+            name="course-desc"
+            placeholder="type description for your cource ...."
+            cols="30"
+            rows="5"
+            id="course-desc"
+          ></textarea>
+        </div>
+
+        <div class="form-item">
+          <label class="mb-2 mt-4" for="course-time">Course Timetable</label>
+          <input type="date" class="form-control  p-3" id="course-time" />
+        </div>
+
+        <div class="form-item">
+          <label class="mb-2 mt-4" for="course-price">Price</label>
+          <input
+          formControlName="Price"
+            type="number"
+            placeholder="please type the course price ..."
+            class="form-control  p-3"
+            id="course-price"
+          />
+        </div>
+       
+
+         <div  class="form-item">
+          <label class="mb-2 mt-4" for="course-price">Room</label>
+          <select class="form-select  dropdown p-3" (change)="onOptionSelect($event)">
+            <option  value="" disabled selected>Choose your room</option>
+            <option  *ngFor="let option of roomsOptions" [value]="option.name">{{option.name}}</option>
+            <option  class="text-black" value="other">other</option>
+
+          </select>
+        </div>
+        <div *ngIf="isInRoom"  class="form-item">
+          <label class="mb-2 mt-3" for="location-course">Location  of course</label>
+          <input
+            type="text"
+            formControlName="Location"
+            placeholder="please type the the loctaion ..."
+            class="form-control  p-3"
+            id="location-course"
+          />
+        </div> 
+        <div class="form-item">
+          <label class="mb-2 mt-3" for="capacity">Capacity</label>
+          <input
+            type="number"
+            formControlName="Capacity"
+            placeholder="please type the the number ..."
+            class="form-control  p-2"
+            id="capacity"
+          />
+        </div>
+        
+        <div class="form-item">
+          <label class="mb-2 mt-3" for="people-number">Number of students</label>
+          <input
+            type="number"
+            formControlName="Num_Of_Students_Joined"
+            placeholder="please type the the number ..."
+            class="form-control  p-2"
+            id="people-number"
+          />
+        </div>
+        <div  class="form-item">
+          <label class="mb-2 mt-3" for="course-photo">Photo of the course </label>
+          <input
+            type="file"
+            formControlName="PictureUrl"
+            placeholder="please type the the number ..."
+            class="form-control  p-2"
+            id="people-number"
+          />
+        </div>
+        
+        <button class="btn mt-3 w-100">Add Course</button>
+      </form>
+    </div>
+  </div>
+</section>

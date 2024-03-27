@@ -1,0 +1,38 @@
+.add-course{
+    h2{
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 60px;
+    }
+    p{
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 30px;
+        color:#888888;
+    }
+    label{
+        font-weight: 700;
+        font-size: 28px;
+        color: #152536;
+    }
+    input , textarea , select{
+        border: 1px solid #0057ff;
+    }
+    select{
+        color: #0057ff;
+    }
+    
+    ::placeholder {
+        color: #0057ff;
+    }
+    
+    input[type="checkbox"] {
+        display: inline-block;
+        margin-left: 200px;
+        background-color: #0057ff;
+    }
+    button{
+        background-color: #0156fd;
+        color: white;
+    }
+}

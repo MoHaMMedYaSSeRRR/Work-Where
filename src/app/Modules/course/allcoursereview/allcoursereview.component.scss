@@ -1,0 +1,83 @@
+.review {
+    .layer{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+    }
+  .header {
+    h2 {
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 85px;
+    }
+    .addReview {
+        width: 75%;
+        border-radius: 20px;
+        padding: 50px;
+      h4 {
+        font-weight: 700;
+        font-size: 54px;
+        line-height: 55px;
+      }
+      label {
+        font-weight: 700;
+        font-size: 28px;
+        color: #152536;
+      }
+      input {
+        border: 1px solid #0057ff;
+      }
+      ::placeholder {
+        color: #0057ff;
+      }
+      button {
+        background-color: #0156fd;
+      }
+    }
+  }
+  .content {
+    .image {
+      background-image: url(../../../../assets/images/abdo.jpg);
+      background-position: center center;
+      background-size: cover;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    h4 {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 28px;
+    }
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: #888888;
+    }
+  }
+}
+@media screen and (min-width: 0) and (max-width: 992px) {
+  .content {
+    .image {
+      margin: auto;
+    }
+  }
+}
+@media screen and (min-width: 0) and (max-width: 730px) {
+    .header {
+        .addReview{
+            width: 100% !important;
+            padding: 20px !important;
+            h4 {
+              font-size: 34px !important;
+            }
+            label {
+              font-size: 20px !important;
+            }
+        }
+    }
+}
