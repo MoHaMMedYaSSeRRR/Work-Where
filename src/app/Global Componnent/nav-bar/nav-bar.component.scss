@@ -1,0 +1,75 @@
+.navbar{
+  background-color: #0156FD;
+  padding: 1.294rem 0;
+
+}
+.navbar *{
+  color: #fff;
+}
+ .navbar-nav {
+  width: 100%;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  align-items: center;
+}
+.nav-link{
+  font-size: 14px;
+  font-weight: 500;
+}
+.nav-link:hover{
+  color: #03FC90;
+  transition: 0.3s all;
+}
+.active{
+  border-bottom: 2px solid #03FC90;
+}
+.login-btn a{
+  background-color: #fff;
+  color: #0156FD;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.login-btn a:hover{
+  color: #03FC90;
+  transition: .3s all;
+}
+.nav-brand{
+  cursor: pointer;
+}
+.navbar-toggler{
+  border: none;
+}
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+.user-wrapper{
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow-y: hidden;
+  border: 3px solid #03FC90;
+}
+.dropdown li *{
+  color: #343A40;
+  cursor: pointer;
+}
+
+.dropdown li{
+  padding: 5px 0;
+}
+.dropdown-item.active, .dropdown-item:active {
+  color: #343A40 !important;
+  text-decoration: none;
+  background-color: #fff !important;
+}
+
+@media (max-width:992px) {
+  .navbar-nav{
+    width: 100%;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px 6px;
+}
+}

@@ -1,0 +1,173 @@
+:root{
+  font-size: 16px;
+}
+.register .welcome{
+  background-image: url("../../../assets/images/authImages/register.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-color: rgba(54, 57, 148, 0.7);
+  background-blend-mode: overlay;
+  color: #fff;
+}
+.login .welcome{
+  background-image: url("../../../assets/images/authImages/test2.jpg");
+  // background-color: rgba(63, 63, 63, 0.919);
+}
+.welcome h2{
+  font-size: 3.5rem;
+
+}
+
+.img-wrapper{
+  width: 190px;
+  position: absolute;
+  top: 27px;
+  left: 134px;
+  cursor: pointer;
+
+}
+.social-icons{
+  position: absolute;
+  bottom: 27px;
+  display: flex;
+  gap: 1rem;
+
+}
+.social-icons a{
+  color: rgba(255,255,255,0.5);
+}
+.social-icons a:hover{
+  color: #03FC90;
+}
+
+.register .form{
+  height: auto;
+  left: 50%;
+}
+.login .form{
+  left: auto;
+}
+
+.form h2{
+  color: #0156fd ;
+}
+.form .text{
+  font-size: 14px;
+  width: 50%;
+  letter-spacing: 1.1px;
+}
+.form-control{
+  border-color: #343A40 !important;
+}
+.form-control::placeholder {
+  color: #0156fd; /* Change placeholder color */
+  font-weight:400; /* Make placeholder text bolder */
+  /* Add an icon as a placeholder (optional) */
+  font-size: 14px;
+
+}
+form{
+  width: 60%;
+}
+.password{
+  position: relative;
+}
+.eye{
+  border: none;
+  background: none;
+  color: #0156fd;
+  position: absolute;
+  top: 9px;
+  right: 5px;
+}
+.eye:focus{
+  outline: none;
+}
+form span{
+  font-size: 14px;
+}
+form .input-wrapper
+{
+  text-align: left;
+}
+.password .form-control.is-invalid{
+  background-image: none;
+}
+
+
+.add-image{
+  display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #0156fd;
+    border-radius: 6px;
+    padding: 10px 10px;
+    align-items: center;
+}
+.add-image p{
+  height: 24px;
+    margin: 0;
+    overflow-y: hidden;
+}
+.submitbtn{
+  background-color: #03FC90;
+  color: #343A40;
+}
+.email-wrapper{
+  width: 150px;
+  margin: auto;
+}
+
+.forget-text a{
+  text-decoration: none;
+}
+.forget-text h6{
+  font-size: 12px;
+}
+
+
+@media (max-width:1090px) {
+  .register .welcome{
+    position: relative !important;
+  }.login .welcome{
+    position: static !important;
+  }
+  .register .form{
+    height: auto;
+    left: auto;
+  }
+  form{
+    width: 75%;
+  }
+  .social-icons{
+    position: relative;
+    /* bottom: 27px; */
+    display: flex;
+    gap: 1rem;
+    top: 21%;
+}
+
+}
+
+@media (max-width:720px) {
+  .img-wrapper{
+    left: 35px;
+}
+form{
+  width: 90%;
+}
+.form .text{
+  width: 85%;
+  padding: 10px 0 15px 0;
+}
+}
+
+@media (max-width:450px) {
+  .form .names{
+    flex-wrap: wrap;
+  }
+  .form .names div{
+    width: 100%;
+  }
+
+}

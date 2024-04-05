@@ -1,0 +1,103 @@
+<div class="container-fluid register login ">
+  <div class="row row-cols-lg-2 row-cols-1 text-center overflow-y-hidden ">
+    <!-- The Form  -->
+
+    <div class="col form pt-5 mt-5 ">
+      <div class="row  justify-content-center align-items-center h-auto ">
+        <h2 class="mt-5 pt-3" style="color:#000">
+          Welcome Back!
+        </h2>
+        <p class="text mb-4">
+          Unlock the Awesome: Exclusive benefits & amazing community await - Login to your account!
+        </p>
+
+      </div>
+      <div class="row justify-content-center align-items-center h-auto ">
+        <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" >
+          <div class=" mb-3 input-wrapper">
+            <input formControlName="email" type="text" placeholder="Email" class="form-control py-2"
+              [class.is-invalid]="submitted && loginForm.get('email')?.errors">
+
+            <span class="text-danger " *ngIf="submitted && loginForm.get('email')?.hasError('required')">
+              Email Address is required
+            </span>
+            <span class="text-danger " *ngIf="submitted && loginForm.get('email')?.hasError('pattern')">
+              Invaild email address
+            </span>
+
+          </div>
+
+          <div class="input-wrapper password">
+            <input formControlName="password" type="{{ showPassword ? 'text' : 'password' }}" placeholder="Password"
+              class="form-control py-2" [class.is-invalid]="submitted && loginForm.get('password')?.errors">
+            <div class="input-group-append">
+              <button type="button" class="eye" (click)="toggleShowPassword()">
+                <i class="fa-regular fa-eye" *ngIf="showPassword"></i>
+                <i class="fa-regular fa-eye-slash" *ngIf="!showPassword"></i>
+
+              </button>
+            </div>
+            <span class="text-danger " *ngIf="submitted && loginForm.get('password')?.hasError('required')">
+              Password is required
+            </span>
+            <span class="text-danger " *ngIf="submitted && loginForm.get('password')?.hasError('pattern')">
+              Password must contain at least one uppercase letter, one lowercase letter, one digit, one special
+              character, and be at least 8 characters long.
+            </span>
+          </div>
+          <div class="forget-text text-end">
+            <a class="btn btn-link pe-0 py-3" routerLink="/send-email/forgot-email-or-password">
+              <h6 class="mb-0">Forget email or password?</h6>
+            </a>
+          </div>
+
+
+          <div class="button-container">
+            <p-button  label="Login" type="submit"></p-button>
+          </div>
+
+        </form>
+        <p class=" mt-5"  style="width:60%">
+          Don't have an account? <br>
+          <a routerLink="/register">&nbsp;Register Now</a>
+        </p>
+
+
+      </div>
+
+
+
+
+
+
+    </div>
+
+    <div class="col d-flex flex-column  justify-content-center align-items-center  welcome ">
+      <div class="img-wrapper" routerLink="/home">
+        <img src="../../../../assets/images/logo-dark.png" alt="logo" width="100%">
+      </div>
+      <!-- <div class="d-flex flex-column justify-content-end align-content-end text-end " style="width: 90%;">
+        <h2 class="">Work.</h2>
+        <h2>Learn.</h2>
+        <h2>Thrive.</h2>
+      </div> -->
+      <h2 class="fs-1">Work, Learn, Thrive</h2>
+      <p class=" fs-5 mt-3" style="width: 70%;">
+        Manage your workspace bookings, explore & join courses, and connect with a thriving community. Sign in!
+      </p>
+
+      <div class="social-icons">
+        <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,213 @@
+<div class="container-fluid register">
+  <div class="row row-cols-lg-2 row-cols-1  text-center ">
+    <div class="col d-flex flex-column  justify-content-center align-items-center  welcome position-fixed">
+      <div class="img-wrapper" routerLink="/home">
+        <img src="../../../../assets/images/logo.png" alt="logo" width="100%">
+      </div>
+      <h2>Welcome</h2>
+      <p>Glad you're here!</p>
+      <p class="w-75 fs-5">
+        Join our thriving learning community. Create an account to host, rent, publish, and join courses - all in one
+        place!
+      </p>
+
+      <div class="social-icons">
+        <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- The Form  -->
+
+    <div class="col form pt-5 position-relative ">
+      <div class="row justify-content-center align-items-center h-auto">
+        <h2 class="mb-3">
+          Create Account
+        </h2>
+        <p class="text mb-3">
+          Free account, exclusive benefits, amazing community.
+          Unlock more with your account.
+        </p>
+        <p-steps [model]="items" [readonly]="true" [activeIndex]="currentStepIndex">
+
+        </p-steps>
+        <p-progressBar [value]="currentstep"></p-progressBar>
+      </div>
+      <div class="row justify-content-center align-items-center h-auto">
+        <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
+        <form [formGroup]="currentStepIndex == 1 ? verifyForm : basicsForm" (ngSubmit)="register()"
+          enctype="multipart/form-data">
+          <div [ngSwitch]="currentStepIndex">
+            <div *ngSwitchCase="0">
+
+              <div class=" row row-cols-2 names">
+                <div class=" mb-3 input-wrapper col">
+                  <input formControlName="firstName" type="text" placeholder="First Name" class="form-control py-2"
+                    [class.is-invalid]="submitted && basicsForm.get('firstName')?.errors">
+
+                  <span class="text-danger" *ngIf="submitted && basicsForm.get('firstName')?.hasError('required')">
+                    First Name is required
+                  </span>
+                  <span class="text-danger"
+                    *ngIf="submitted && basicsForm.get('firstName')?.hasError('minlength') || basicsForm.get('firstName')?.hasError('maxlength') ">
+                    First Name must be at least 3, and maximum 15 characters
+                  </span>
+
+                </div>
+                <div class=" mb-3 input-wrapper col">
+                  <input formControlName="lastName" type="text" placeholder="Last Name" class="form-control py-2"
+                    [class.is-invalid]="submitted && basicsForm.get('lastName')?.errors">
+
+                  <span class="text-danger " *ngIf="submitted && basicsForm.get('lastName')?.hasError('required')">
+                    Last Name is required
+                  </span>
+                  <span class="text-danger "
+                    *ngIf="submitted && basicsForm.get('lastName')?.hasError('minlength') || basicsForm.get('lastName')?.hasError('maxlength') ">
+                    Last Name must be at least 3, and maximum 15 characters
+                  </span>
+                </div>
+              </div>
+              <div class=" mb-3 input-wrapper">
+                <input formControlName="email" type="text" placeholder="Email" class="form-control py-2"
+                  [class.is-invalid]="submitted && basicsForm.get('email')?.errors">
+
+                <span class="text-danger " *ngIf="submitted && basicsForm.get('email')?.hasError('required')">
+                  Email Address is required
+                </span>
+                <span class="text-danger " *ngIf="submitted && basicsForm.get('email')?.hasError('pattern')">
+                  Invaild email address
+                </span>
+
+              </div>
+
+              <div class=" mb-3 input-wrapper password">
+                <input formControlName="password" type="{{ showPassword ? 'text' : 'password' }}" placeholder="Password"
+                  class="form-control py-2" [class.is-invalid]="submitted && basicsForm.get('password')?.errors">
+                <div class="input-group-append">
+                  <button type="button" class="eye" (click)="toggleShowPassword()">
+                    <i class="fa-regular fa-eye" *ngIf="showPassword"></i>
+                    <i class="fa-regular fa-eye-slash" *ngIf="!showPassword"></i>
+
+                  </button>
+                </div>
+                <span class="text-danger " *ngIf="submitted && basicsForm.get('password')?.hasError('required')">
+                  Password is required
+                </span>
+                <span class="text-danger " *ngIf="submitted && basicsForm.get('password')?.hasError('pattern')">
+                  Password must contain at least one uppercase letter, one lowercase letter, one digit, one special
+                  character, and be at least 8 characters long.
+                </span>
+              </div>
+              <div class=" mb-3 input-wrapper col">
+                <input formControlName="nId" type="text" placeholder="National ID Number" class="form-control py-2"
+                  maxlength="14" minlength="14" [class.is-invalid]="submitted && basicsForm.get('nId')?.errors">
+
+                <span class="text-danger " *ngIf="submitted && basicsForm.get('nId')?.hasError('required')">
+                  National ID number s required.
+                </span>
+                <span class="text-danger "
+                  *ngIf="submitted && basicsForm.get('nId')?.hasError('minlength') || basicsForm.get('nId')?.hasError('maxlength') ">
+                  National ID must be 16 number.
+                </span>
+              </div>
+              <div class=" mb-3 input-wrapper col">
+                <input formControlName="phoneNumber" type="text" placeholder="Phone Number" class="form-control py-2"
+                  maxlength="11" minlength="11" [class.is-invalid]="submitted && basicsForm.get('phoneNumber')?.errors">
+
+                <span class="text-danger " *ngIf="submitted && basicsForm.get('phoneNumber')?.hasError('required')">
+                  Phone number is required.
+                </span>
+                <span class="text-danger "
+                  *ngIf="submitted && basicsForm.get('phoneNumber')?.hasError('minlength') || basicsForm.get('phoneNumber')?.hasError('maxlength') ">
+                  Last Name be 16 number.
+                </span>
+              </div>
+            </div>
+            <div *ngSwitchCase="1">
+              <div class="mb-3 input-wrapper">
+
+                <div class="add-image">
+                  <p #fileInput>Choose Personal Image</p>
+                  <div class="img-input">
+                      <input type="file" formControlName="personalImg" accept=".png,.jpg,.jpegf" name="uploadfile" id="img"
+                          style="display:none;" (change)="onFileUpload($event)" />
+                      <label for="img">Browse</label>
+                  </div>
+              </div>
+              <span class="text-danger"
+                      *ngIf="verifySubmitted && verifyForm.get('personalImg')?.hasError('required')">
+                  Personal image is required
+                </span>
+
+              </div>
+
+              <div class="mb-3 input-wrapper">
+
+                <div class="add-image">
+                  <p #fileInputtwo>Choose National ID Image</p>
+                  <div class="img-input">
+                      <input type="file" formControlName="nImg" accept=".png,.jpg,.jpegf" name="uploadfile" id="nid"
+                          style="display:none;" (change)="onImageUpload($event)" />
+                      <label for="nid">Browse</label>
+                  </div>
+              </div>
+              <span class="text-danger"
+                      *ngIf="verifySubmitted && verifyForm.get('nImg')?.hasError('required')">
+                  National ID image is required
+                </span>
+
+              </div>
+
+
+            </div>
+
+            <div *ngSwitchCase="2">
+
+              <div class="email-wrapper">
+                <img src="../../../../assets/images/authImages/Confirm.gif" alt="Confirm Email" width="100%">
+              </div>
+              <h2>
+                Confirmation Email Sent
+              </h2>
+              <p>
+                Verify your email to unlock exclusive benefits & updates. Click the link in your inbox or resend below.
+              </p>
+              <p>
+                <a href="#"> Resend Confirmation Email</a>
+              </p>
+
+            </div>
+          </div>
+
+
+          <div class="button-container">
+            <p-button label="Previous" (click)="prevStep()" [disabled]="currentStepIndex === 0"
+              *ngIf="currentStepIndex <= 1"></p-button>
+            <p-button *ngIf="currentStepIndex === 0" label="Next"  (click)="nextStep()"></p-button>
+            <p-button *ngIf="currentStepIndex === 1" label="Create" type="submit" [ngStyle]="{ 'background-color': '#ccc' }"></p-button>
+          </div>
+
+        </form>
+        <p class=" my-4"  style="width:60%">
+          Already have account? <a routerLink="/login">&nbsp;Login&nbsp;Now</a>
+        </p>
+
+        <!-- <img [src]="imgurl" alt="imgtest"/>
+
+        <button (click)="Show()">Show data</button> -->
+
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+

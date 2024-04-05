@@ -19,3 +19,104 @@ $text-color :#343A40;
 .main-color{
     color: $main-color;
 }
+// .p-steps-title{
+//  visibility: hidden;
+// }
+
+ul{
+  padding-left: 0;
+}
+.p-menuitem-link{
+  text-decoration: none;
+  color: #fff;
+  background:none;
+
+}
+.p-element{
+  width: 60%;
+}
+.p-steps-number{
+  font-size: 14px;
+}
+.p-steps .p-steps-item.p-highlight .p-steps-title{
+  font-size: 14px;
+}
+
+.p-steps .p-steps-item .p-menuitem-link .p-steps-number {
+  background-color: #0156fd;
+  color: #fff;
+  opacity: 1
+}
+
+.p-disabled, .p-component:disabled {
+    opacity: 1;
+  }
+
+
+
+
+.button-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.button-container .p-button{
+  border-radius: 6px;
+  width: 100px;
+
+}
+.button-container .submitbtn{
+  background-color: #03FC90;
+  color: #343A40;
+}
+.button-container .p-element{
+  width: 110px;
+}
+
+.button-container .p-disabled, .p-component:disabled {
+  opacity: 0.8;
+
+}
+.p-steps .p-steps-item:before {
+  display: none;
+}
+.p-progressbar-determinate .p-progressbar-label {
+  display: none !important;
+}
+.p-progressbar{
+  position: relative;
+  top: -66px;
+  z-index: -1;
+  height: 5px;
+}
+.p-message-wrapper .p-message-icon{
+  display: none;
+}
+
+.p-message .p-message-wrapper {
+  padding: 1rem 1.75rem 1rem .5rem;
+}
+.p-message .p-message-wrapper .p-message-detail{
+  font-size: 14px;
+}
+
+.login .button-container{
+  display: block;
+  width: 100%;
+}
+.login .button-container .p-element {
+  width: 100%;
+}
+
+@media (max-width:1090px) {
+  .p-element{
+    width: 75%;
+  }
+}
+
+@media (max-width:720px) {
+  .p-element{
+    width: 90%;
+  }
+}

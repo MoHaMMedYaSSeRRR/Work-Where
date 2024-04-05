@@ -9,8 +9,9 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CalendarModule } from 'primeng/calendar';
+import { JwtInterceptor } from './core/Interceptors/jwt.interceptor';
 
 
 @NgModule({
@@ -19,12 +20,12 @@ import { CalendarModule } from 'primeng/calendar';
     NavBarComponent,
     FooterComponent,
     NotfoundComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     BrowserAnimationsModule,
     CarouselModule,
     ReactiveFormsModule,
@@ -32,7 +33,9 @@ import { CalendarModule } from 'primeng/calendar';
     CalendarModule
 
     ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
